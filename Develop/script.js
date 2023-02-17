@@ -1,6 +1,26 @@
-const currentDateArea = document.getElementById("currentDay");
+// use jQuery to get currentDay 
+const currentDateArea = $("#currentDay")
+//use dayjs to display current date
+currentDateArea.text(dayjs().format('dddd, MMMM D, YYYY'));
 
-currentDateArea.innerText = dayjs().format('dddd, MMMM D, YYYY');
+//pseudocode
+// store the number of working hours in a variable
+// create a number of time block sections equal to number of working hours
+// ex: 9am-5pm is 8 hour-long time blocks
+// var workingHours = 8
+// for (i = 0; i < workingHours; i++){
+//   document.createElement("div")
+// };
+// using a for loop, assign an ID to each block, equal to the time it will represent
+// block 1 = 9am
+//for (i=0; i< workingHours; i++) {
+//   hourBlock.setAttribute("id", [i]);
+// }
+// Set color of each block according to its relevance to the current hour
+// if (hourBlock.id < currentHour) { hourBlock.style.backgroundColor = "grey"}
+// else if (hourBlock.id = currentHour) { hourBlock.style.backgroundColor = "red"}
+// else if { hourBlock.style.backgroundColor = "green"}
+
 
 
 $(function () {
