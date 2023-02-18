@@ -1,5 +1,7 @@
 // use jQuery to get currentDay 
-const currentDateArea = $("#currentDay")
+const currentDateArea = $("#currentDay");
+const timeBlocks = $("#timeBlocks");
+const saveButton = $(".saveBtn");
 //use dayjs to display current date
 currentDateArea.text(dayjs().format('dddd, MMMM D, YYYY'));
 
@@ -21,9 +23,20 @@ currentDateArea.text(dayjs().format('dddd, MMMM D, YYYY'));
 // else if (hourBlock.id = currentHour) { hourBlock.style.backgroundColor = "red"}
 // else if { hourBlock.style.backgroundColor = "green"}
 
+var workingHours = 8;
 
+for (i = 0; i < workingHours; i++) {
+  var newDiv = $("<div>");
+  newDiv.addClass(function () { return "par_" + i; });
+  // need to clean this up by adding individual elements
+  // then append the time and class to them
+  newDiv.append("<div class='row time-block future'><div class='col-2 col-md-1 hour text-center py-3'>9AM</div><textarea class='col-8 col-md-10 description' rows='3'> </textarea><button class='btn saveBtn col-2 col-md-1' aria-label='save'><i class='fas fa-save' aria-hidden='true'></i></button></div>");
+  timeBlocks.append(newDiv);
+  console.log(i);
+}
 
 $(function () {
+  saveButton.on("click", function () { console.log("click") });
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
