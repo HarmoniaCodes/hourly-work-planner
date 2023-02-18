@@ -24,13 +24,21 @@ currentDateArea.text(dayjs().format('dddd, MMMM D, YYYY'));
 // else if { hourBlock.style.backgroundColor = "green"}
 
 var workingHours = 8;
-
+var startingHour = 9;
 for (i = 0; i < workingHours; i++) {
   var newDiv = $("<div>");
-  newDiv.addClass(function () { return "par_" + i; });
+  var newTimeBlockRow = $("<div>");
+  var hourDisplayBlock = $("div");
+  newDiv.addClass(function () { return "hour_" + (startingHour + i); });
   // need to clean this up by adding individual elements
   // then append the time and class to them
-  newDiv.append("<div class='row time-block future'><div class='col-2 col-md-1 hour text-center py-3'>9AM</div><textarea class='col-8 col-md-10 description' rows='3'> </textarea><button class='btn saveBtn col-2 col-md-1' aria-label='save'><i class='fas fa-save' aria-hidden='true'></i></button></div>");
+  // add a class to the new row based on current time
+  if ((startingHour + i) < dayjs().hour()) { newTimeBlockRow.addClass("row time-block past") }
+  else if ((startingHour + i) == dayjs().hour()) { newTimeBlockRow.addClass("row time-block present") }
+  else { newTimeBlockRow.addClass("row time-block future") }
+  // append the newTimeBlockRow to the container
+  newDiv.append(newTimeBlockRow);
+  newTimeBlockRow.append("<div class='col-2 col-md-1 hour text-center py-3'>9AM</div><textarea class='col-8 col-md-10 description' rows='3'> </textarea><button class='btn saveBtn col-2 col-md-1' aria-label='save'><i class='fas fa-save' aria-hidden='true'></i></button></div>");
   timeBlocks.append(newDiv);
   console.log(i);
 }
