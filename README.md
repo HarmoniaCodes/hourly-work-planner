@@ -16,7 +16,7 @@ This planner was created to display my knowledge of implementing third-party API
 - Be sure to click the floppy disk icon to save your data! Data will be cleared when your browser storage is deleted.
 
 ## Screenshots
-<img src="./assets/images/screenshot.png" width="600px" />
+<img src="./Assets/images/screenshot.png" width="600px" />
 
 ## Links
 [Deployed Site](http://harmoniacodes.github.io/hourly-work-planner)
