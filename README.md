@@ -8,7 +8,7 @@ This planner was created to display my knowledge of implementing third-party API
 ## How to use
 
 ### Setting Your Start Time and Number of Working Hours
-- The default setting of this planner allows for 8 hour-long time slots. This can be changed by editing the value for the "workingHours" variable (default is 9).
+- The default setting of this planner allows for 9 hour-long time slots. This can be changed by editing the value for the "workingHours" variable.
 - You can also edit when your day starts using a value of 0-23 for the "startingHour" variable (default is 9). 
 
 ### Setting and Storing Hourly Data
